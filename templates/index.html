@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>AlPR System</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/mdi/css/materialdesignicons.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/css/vendor.bundle.base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/vertical-layout-dark/style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static',filename='images/favicon.png') }}" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/bars-1to10.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/bars-horizontal.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/bars-movie.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/bars-pill.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/bars-reversed.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/bars-square.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/bootstrap-stars.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/css-stars.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/examples.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/fontawesome-stars-o.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-bar-rating/fontawesome-stars.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-asColorPicker/css/asColorPicker.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/x-editable/bootstrap-editable.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/bootstrap-datepicker/bootstrap-datepicker.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/dropify/dropify.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-file-upload/uploadfile.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/jquery-tags-input/jquery.tagsinput.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/dropzone/dropzone.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/select2/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html --> 
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-between">
+          <h1>ALPR System</h1>
+        </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+        <div class="d-none d-lg-flex">
+          <h1>Sistema ALPR desenvolvido para Estacionamentos</h1>
+        </div>
+        <h5>Desenvolvido por: João pedro Thomaz de Paula</h5>
+      </div>
+    </nav> 
+    <!-- partial -->
+
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          
+          
+        </ul>
+      </nav>
+      <!-- partial -->
+
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="d-xl-flex justify-content-between align-items-center mb-4 pb-2">
+            <div class="text-light">
+              <h2 class="mb-1 font-weight-bold">Bem Vindo</h2>
+              <p class="text-small mb-0">Projeto desenvolvido para fins Acadêmicos</p>
+            </div>
+          </div>
+
+         
+          <div class="row">
+            <div class="col-sm-3 grid-margin stretch-card">
+              <div class="card bg-primary text-white text-center">
+                <div class="card-body">
+                  <h1 class="font-weight-bold mb-4 pb-2 pt-4">Veículos Cadastrados</h1>
+                  <h2 class="font-weight-bold display-3 mt-4 mb-4">{{cadastro}}</h2>
+                </div>
+              </div>
+            </div>
+            <!--
+            <div class="col-sm-3 grid-margin stretch-card">
+              <div class="card bg-primary text-white text-center">
+                <div class="card-body">
+                  <h1 class="font-weight-bold mb-4 pb-2 pt-4">Total de Vagas</h1>
+                  <h2 class="font-weight-bold display-3 mt-4 mb-4">40</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3  grid-margin stretch-card">
+              <div class="card text-center">
+                <div class="card-body">
+                  <div class="plan-icon-circle pt-3">
+                  </div>
+                  <h1 class="font-weight-bold mb-2 text-light">30</h1>
+                  <p class="text-muted mb-3">Vagas Disponíveis</p>
+                </div>
+              </div>
+            </div> 
+            -->
+            <div class="col-sm-3  grid-margin stretch-card">
+              <div class="card text-center">
+                <div class="card-body">
+                  <div class="plan-icon-circle pt-3">
+                  </div>
+                  <h1 class="font-weight-bold mb-2 text-light">{{ocupa}}</h1>
+                  <p class="text-muted mb-3">Vagas Ocupadas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          
+          
+          <!-- modal Saída -->
+          <div class="modal fade" id="SaidaVeiculo" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="ModalLabel">Saída de Veículo</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                        <table >
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Placa</th>
+                                    
+                                    <th>Entrada</th>
+                                    <th>Saída</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              {% for row in saidas %}
+                                <tr>
+                                  <td>{{row[0]}}</td>
+                                  <td>{{row[1]}}</td>
+                                  
+                                  <td>{{row[3]}}</td>
+                                    <td>
+                                        <a className="badge badge-success" method='post' action='{{url_for("edit",id=row[0])}}' href='{{url_for("edit",id=row[0])}}' >registrar saída</a>
+                                    </td>
+                                </tr>
+                              {%endfor%}
+                            </tbody>
+                        </table>
+                    
+                    </div>
+
+                  </form>
+                </div>
+                <!--
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success">CONFIRMAR SAÍDA</button>
+                  <button type="button" class="btn btn-light" data-dismiss="modal">FECHAR</button>
+                </div>-->
+              </div>
+            </div>
+          </div>
+          <!-- Fim modal -->
+          
+          <div class="row">
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Ações</h4>
+                  <div class="template-demo">    
+                    <button type="button" class="btn btn-dark btn-lg btn-block" data-toggle="modal" data-target="#SaidaVeiculo" data-whatever="@fat">Saída de Veículo</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                  <div id ="camera">
+                      <img src="{{ url_for('video_feed') }}">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-wrapper">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Lista de Carros</h4>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="table-responsive">
+                        <table id="order-listing" class="table">
+                          <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Placa</th>
+                                <th>Modelo</th>
+                                <th>Entrada</th>
+                                <th>Saída</th>  
+                               
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for row in datas %}
+                            <tr>
+                                <td>{{row[0]}}</td>
+                                <td>{{row[1]}}</td>
+                                <td>{{row[2]}}</td>
+                                <td>{{row[3]}}</td>
+                                <td>{{row[4]}}</td>
+                            </tr>
+                          </tbody>
+                          {%endfor%}
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 <a target="_blank">JPTHP</a>. All rights reserved. Terms of use | Privacy Policy</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Projeto com fins acadêmicos</span>
+          </div>
+        </footer>
+       
+        <!-- Fim modal -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+
+  <script src="{{ url_for('static',filename='vendors/js/vendor.bundle.base.js') }}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="{{ url_for('static',filename='js/off-canvas.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/hoverable-collapse.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/template.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/settings.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/todolist.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/modal-demo.js') }}"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script type="module" src="{{ url_for('static',filename='src/main.jsx') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/progressbar.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/flot/jquery.flot.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/flot/jquery.flot.resize.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/chart.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/chart.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/formpickers.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/form-addons.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/x-editable.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/dropify.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/dropzone.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/jquery-file-upload.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/form-repeater.js') }}"></script>
+
+  <!-- End plugin js for this page -->
+  <script src="{{ url_for('static',filename='vendors/datatables.net/jquery.dataTables.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/data-table.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/form-addons.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/x-editable.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/jquery-file-upload.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/form-repeater.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/inputmask.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/jquery-bar-rating/jquery.barrating.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/jquery-asColor/jquery-asColor.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/jquery-asGradient/jquery-asGradient.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/jquery-asColorPicker/jquery-asColorPicker.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/x-editable/bootstrap-editable.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/moment/moment.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/dropify/dropify.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/jquery-file-upload/jquery.uploadfile.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/jquery-tags-input/jquery.tagsinput.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/dropzone/dropzone.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/jquery.repeater/jquery.repeater.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/inputmask/jquery.inputmask.bundle.js') }}"></script>
+  <!-- Custom js for this page-->
+  <script src="{{ url_for('static',filename='js/chart.flot.sampledata.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/dashboard.sampledata.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/patternomaly/patternomaly.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/dashboard.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/file-upload.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/iCheck.html') }}"></script>
+  <script src="{{ url_for('static',filename='js/typeahead.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/select2.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/typeahead.js') }}"></script>
+  <script src="{{ url_for('static',filename='vendors/select2/select2.min.js') }}"></script>
+  <!-- End custom js for this page-->
+</body>
+</html>
+

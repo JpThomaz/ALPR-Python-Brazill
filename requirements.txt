@@ -1,0 +1,14 @@
+beautifulsoup4==4.11.1
+Flask==2.1.1
+ipython==8.4.0
+matplotlib==3.5.2
+numpy==1.19.5
+opencv_python_headless==4.5.4.60
+paddleocr==2.4.0.4
+pandas==1.2.4
+Pillow==9.1.1
+requests==2.27.1
+selenium==4.3.0
+tensorflow==2.9.1
+tensorflow_gpu==2.8.0
+vidgear==0.2.5
