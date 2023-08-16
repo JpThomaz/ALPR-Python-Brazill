@@ -39,7 +39,7 @@ Baixe abaixo o modelo já treinado da rede neural convolucional e salve em:
 ```bash
   \alpr_app\yolo_utils\lapi.weights
 ```
-- [Baixar modelo](https://drive.google.com/file/d/1deje93lHCgfVYRFd8ZpdUxYxg0H_LU3D/view?usp=sharing)
+- [Baixar modelo](https://github.com/JpThomaz/ALPR-Python-Brazill/releases/download/model/lapi.weights)
 
 O crawler roda no Firefox, por isso é necessario instalar o geckodriver. (Você também pode rodar no Chrome ou outro navegador)
 Certifique-se que apóx baixar o driver, colocar o diretório dele como variável de ambiente.
@@ -52,7 +52,7 @@ Após fazer todos os passos acima, execute  o server Flask
 ## Autor
 
 - [@JpThomaz](https://github.com/JpThomaz)
-- [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jo%C3%A3o-pedro-thomaz-de-paula-3834151a4/)
+- [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joao-pedro-thomaz-de-paula/)
 
 
 ## Etiquetas
